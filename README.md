@@ -1,7 +1,7 @@
 Portfolio
 Project URL
 
-https://portfolio-tau-flame-64.vercel.app/
+https://portfolio-om2g8hzhq-javeriaispink14s-projects.vercel.app/
 
 Project Overview
 
