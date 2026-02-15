@@ -35,6 +35,7 @@ const About = () => {
   return (
     <section id="about" className="py-24" ref={ref}>
       <div className="container mx-auto px-6">
+        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -49,6 +50,7 @@ const About = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-start">
+          {/* Left Side Text */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -70,6 +72,7 @@ const About = () => {
             </p>
           </motion.div>
 
+          {/* Right Side Cards */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
@@ -77,15 +80,24 @@ const About = () => {
             className="space-y-6"
           >
             {/* Personal Info */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {personalInfo.map((info) => (
-                <div key={info.label} className="gradient-border p-4 flex items-center gap-3">
+                <div
+                  key={info.label}
+                  className="gradient-border p-4 flex items-center gap-3"
+                >
                   <div className="p-2 rounded-lg gradient-bg flex-shrink-0">
                     <info.icon className="w-4 h-4 text-primary-foreground" />
                   </div>
-                  <div>
-                    <p className="text-xs text-muted-foreground">{info.label}</p>
-                    <p className="text-sm font-medium">{info.value}</p>
+
+                  {/* Important Fix: min-w-0 + break-words */}
+                  <div className="min-w-0">
+                    <p className="text-xs text-muted-foreground">
+                      {info.label}
+                    </p>
+                    <p className="text-sm font-medium break-words">
+                      {info.value}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -100,30 +112,41 @@ const About = () => {
                       <GraduationCap className="w-4 h-4 text-primary-foreground" />
                     </div>
                     <div>
-                      <h3 className="font-display font-semibold text-sm mb-0.5">{edu.degree}</h3>
-                      <p className="text-primary text-xs font-medium">{edu.school}</p>
-                      <p className="text-muted-foreground text-xs mt-0.5">{edu.period}</p>
+                      <h3 className="font-display font-semibold text-sm mb-0.5">
+                        {edu.degree}
+                      </h3>
+                      <p className="text-primary text-xs font-medium">
+                        {edu.school}
+                      </p>
+                      <p className="text-muted-foreground text-xs mt-0.5">
+                        {edu.period}
+                      </p>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* Info cards */}
-            <div className="grid grid-cols-2 gap-4">
+            {/* Info Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="gradient-border p-5 text-center">
                 <div className="p-3 rounded-lg gradient-bg inline-block mb-3">
                   <Code className="w-5 h-5 text-primary-foreground" />
                 </div>
                 <h4 className="font-display font-semibold">5+</h4>
-                <p className="text-muted-foreground text-sm">Projects Built</p>
+                <p className="text-muted-foreground text-sm">
+                  Projects Built
+                </p>
               </div>
+
               <div className="gradient-border p-5 text-center">
                 <div className="p-3 rounded-lg gradient-accent inline-block mb-3">
                   <Lightbulb className="w-5 h-5 text-primary-foreground" />
                 </div>
                 <h4 className="font-display font-semibold">Innovative</h4>
-                <p className="text-muted-foreground text-sm">Problem Solver</p>
+                <p className="text-muted-foreground text-sm">
+                  Problem Solver
+                </p>
               </div>
             </div>
           </motion.div>
