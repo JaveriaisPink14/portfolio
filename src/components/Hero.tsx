@@ -39,7 +39,7 @@ const Hero = () => {
               <span className="gradient-text">Javaria Shabbir</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed max-w-xl mx-auto lg:mx-0">
-              Software Engineering Undergraduate | MERN Stack Developer | UI/UX Enthusiast
+              Software Engineering Undergraduate | Full Stack (MERN) Developer | UI/UX Enthusiast
             </p>
             <p className="text-muted-foreground mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
               Motivated Software Engineering undergraduate with hands-on experience in frontend and MERN-stack 
